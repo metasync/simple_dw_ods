@@ -1,0 +1,5 @@
+load_from:
+  - python_module:
+      module_name: ods_dagster.definitions
+      working_directory: ods_dagster
+      location_name: ods_dagster

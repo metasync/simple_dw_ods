@@ -1,0 +1,40 @@
+source: LOCAL
+target: STARROCKS
+
+defaults:
+  mode: full-refresh
+  # object: 'target_schema.{stream_file_folder}_{stream_file_name}'
+
+streams:
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_customers.csv":
+    object: 'jaffle_shop.ods_customers'
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_items.csv":
+    object: 'jaffle_shop.ods_items'
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_orders.csv":
+    object: 'jaffle_shop.ods_orders'
+    columns:
+      ordered_at: datetime
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_products.csv":
+    object: 'jaffle_shop.ods_products'
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_stores.csv":
+    object: 'jaffle_shop.ods_stores'
+    columns:
+      opened_at: datetime
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_supplies.csv":
+    object: 'jaffle_shop.ods_supplies'
+
+  "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_tweets.csv":
+    object: 'jaffle_shop.ods_tweets'
+    columns:
+      tweeted_at: datetime
+
+# env:
+#   SLING_SAMPLE_SIZE: 2000 # increase the sample size to infer types (default=900).
+#   SLING_STREAM_URL_COLUMN: true # adds a _sling_stream_url column with file path
+#   SLING_THREADS: 3 # run streams concurrently
+

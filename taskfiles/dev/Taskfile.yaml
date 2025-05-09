@@ -1,0 +1,16 @@
+# https://taskfile.dev
+
+version: '3'
+
+silent: true
+
+tasks:
+  dagster:
+    desc: Start dagster for local development
+    cmds:
+      - dagster dev
+
+  db:
+    desc: Connect to the development duckdb
+    cmds:
+      - duckdb data/dev.duckdb

@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+silent: true
+
+dotenv: ['taskfiles/dev/.env']
+
+includes:
+  dev: taskfiles/dev/Taskfile.yaml
+
+tasks:
+  env:
+    - env

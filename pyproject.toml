@@ -1,0 +1,31 @@
+[project]
+name = "simple_dw_ods"
+version = "0.2.1"
+description = "ODS layer in a simple data warehouse using Dagster"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dagster>=1.10.10",
+    "dagster-duckdb>=0.26.10",
+    "dagster-sling>=0.26.11",
+    "dagster-webserver>=1.10.10",
+    "duckdb>=1.2.2",
+    "go-task-bin>=3.43.3",
+    # "pandas>=2.2.3",
+    "starrocks>=1.2.2",
+]
+
+[dependency-groups]
+dev = [
+    "jafgen>=0.4.14",
+    "pytest>=8.3.5",
+    "ruff>=0.11.7",
+]
+
+[tool.uv]
+native-tls = true
+
+# [[tool.uv.index]]
+# name = "devpi"
+# url = "https://devpi.k8s.orb.local/root/pypi"
+# default = true
