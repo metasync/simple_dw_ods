@@ -1,0 +1,28 @@
+[_]
+schema-version = "0.2"
+
+[io.buildpacks]
+builder = "quay.io/metasync/schematic_builder_base:al2023"
+
+exclude = [
+  # git-generated files
+  ".git",
+  # Python-generated files
+  "__pycache__/",
+  "*.py[oc]",
+  "build/",
+  "dist/",
+  "wheels/",
+  "*.egg-info",
+  # Deploy files
+  "deploy",
+  # Virtual environments
+  ".venv",
+  # Dagster-generated files
+  "/tmp*/",
+  # pytest-generated files
+  ".pytest_cache",
+  # ruff-generated files
+  ".ruff_cache",
+]
+

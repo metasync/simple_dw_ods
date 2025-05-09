@@ -1,30 +1,12 @@
 # Python-generated files
-uv.lock
-package-lock.yml
-package-lock.concurrent-update-lock
-
-target/
-dbt_packages/
-logs/
-__pycache__/
-*.py[oc]
+**/__pycache__/
 build/
 dist/
 wheels/
 *.egg-info
 
-*.duckdb
-
-.ipynb_checkpoints/
-
-.tmp_dagster_home_*/
-
-
 # Virtual environments
 .venv
-venv
-.env
-env
 
 # Dagster-generated files
 /tmp*/
@@ -34,4 +16,9 @@ env
 
 # ruff-generated files
 .ruff_cache
+
+# other files
+**/.cache
+.git
+deploy
 
