@@ -1,4 +1,8 @@
+from pathlib import Path
+
 from dagster_sling import SlingResource, sling_assets
+
+data_dir = Path(__file__).joinpath("..", "..", "..", "..", "data", "jaffle_shop")
 
 replication_config = {
   "source": "local",
@@ -7,27 +11,27 @@ replication_config = {
     "mode": "full-refresh",
   },
   "streams": {
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_customers.csv": {
+    f"file://{data_dir.joinpath("raw_customers.csv").resolve()}": {
       "object": "jaffle_shop.ods_customers",
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_items.csv": {
+    f"file://{data_dir.joinpath("raw_items.csv").resolve()}": {
       "object": "jaffle_shop.ods_items",
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_orders.csv": {
+    f"file://{data_dir.joinpath("raw_orders.csv").resolve()}": {
       "object": "jaffle_shop.ods_orders",
       "columns": { "ordered_at": "datetime" },
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_products.csv": {
+    f"file://{data_dir.joinpath("raw_products.csv").resolve()}": {
       "object": "jaffle_shop.ods_products"
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_stores.csv": {
+    f"file://{data_dir.joinpath("raw_stores.csv").resolve()}": {
       "object": "jaffle_shop.ods_stores",
       "columns": { "opened_at": "datetime" },
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_supplies.csv": {
+    f"file://{data_dir.joinpath("raw_supplies.csv").resolve()}": {
       "object": "jaffle_shop.ods_supplies",
     },
-    "file:///home/jovyan/projects/simple-dw/data/jaffle_shop/raw_tweets.csv": {
+    f"file://{data_dir.joinpath("raw_tweets.csv").resolve()}": {
       "object": "jaffle_shop.ods_tweets",
       "columns": { "tweeted_at": "datetime" },
     },
